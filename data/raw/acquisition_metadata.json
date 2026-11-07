@@ -1,0 +1,24 @@
+{
+  "retrieved_at_utc": "2026-11-07T17:45:44.610392+00:00",
+  "transport": "FRED public graph CSV endpoint",
+  "downloads": {
+    "SP500": {
+      "description": "S&P 500 daily close (price index, dividends excluded)",
+      "url": "https://fred.stlouisfed.org/series/SP500",
+      "file": "data/raw/SP500.csv",
+      "bytes": 48922
+    },
+    "VIXCLS": {
+      "description": "CBOE Volatility Index daily close",
+      "url": "https://fred.stlouisfed.org/series/VIXCLS",
+      "file": "data/raw/VIXCLS.csv",
+      "bytes": 47713
+    },
+    "DGS10": {
+      "description": "10-year Treasury constant-maturity yield",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "file": "data/raw/DGS10.csv",
+      "bytes": 44819
+    }
+  }
+}

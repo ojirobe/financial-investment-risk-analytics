@@ -1,0 +1,16 @@
+{
+  "analysis_generated_at_utc": "2026-11-07T17:45:44.738801+00:00",
+  "first_observation": "2016-11-07",
+  "last_observation": "2026-11-05",
+  "aligned_observations": 2495,
+  "return_observations": 2494,
+  "cumulative_price_return_pct": 245.0,
+  "annualized_volatility_pct": 18.19,
+  "maximum_drawdown_pct": -33.92,
+  "historical_var_95_pct": 1.69,
+  "conditional_var_95_pct": 2.79,
+  "return_vix_change_correlation": -0.788,
+  "latest_sp500_close": 7353.73,
+  "latest_vix_close": 28.18,
+  "latest_10y_treasury_yield_pct": 4.84
+}

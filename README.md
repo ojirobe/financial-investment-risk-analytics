@@ -2,7 +2,7 @@
 
 **Live dashboard:** [financial-investment-risk-analytics-ojirobe.streamlit.app](https://financial-investment-risk-analytics-ojirobe.streamlit.app/)
 
-Project 3 of a five-project analytics portfolio. This repository implements a reproducible market-risk workflow with daily financial data, SQL, statistical tests, constrained portfolio optimization, leakage-safe modelling, an interactive dashboard, and automated tests.
+This repository implements a reproducible market-risk workflow with daily financial data, SQL, statistical tests, constrained portfolio optimization, leakage-safe modelling, an interactive dashboard, and automated tests.
 
 > Historical and educational analysis only. Nothing in this repository is investment advice, a trading signal, or a recommendation to buy or sell any asset.
 

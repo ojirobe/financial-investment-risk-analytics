@@ -98,16 +98,16 @@ with overview:
     normalized = filtered.set_index("date")[["sp500", "nasdaq", "gold", "bonds"]].rename(columns={"gold": "gold_silver_equities", "bonds": "corporate_bonds"})
     normalized = normalized / normalized.iloc[0] * 100
     fig = px.line(normalized, labels={"value": "Indexed value (start = 100)", "variable": "Asset"}, title="Normalized asset-price paths")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     left, right = st.columns(2)
     with left:
         fig = px.line(filtered, x="date", y="vix", title="VIX market-stress indicator")
         fig.add_hline(y=20, line_dash="dot", line_color="orange")
         fig.add_hline(y=30, line_dash="dot", line_color="red")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     with right:
         fig = px.line(filtered, x="date", y="treasury_10y", title="10-year Treasury yield", labels={"treasury_10y": "Yield (%)"})
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 with regimes:
     regime_frame = filtered.assign(
@@ -116,9 +116,9 @@ with regimes:
     summary = regime_frame.groupby("regime", observed=False)["sp500_return"].agg(["count", "mean", "std"]).reset_index()
     summary["mean_return_pct"] = summary["mean"] * 100
     summary["annualized_volatility_pct"] = summary["std"] * np.sqrt(252) * 100
-    st.dataframe(summary[["regime", "count", "mean_return_pct", "annualized_volatility_pct"]], hide_index=True, use_container_width=True)
+    st.dataframe(summary[["regime", "count", "mean_return_pct", "annualized_volatility_pct"]], hide_index=True, width="stretch")
     fig = px.box(regime_frame, x="regime", y="sp500_return", points=False, labels={"sp500_return": "Daily S&P 500 return", "regime": "VIX regime"})
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     levene = statistical_tests["stress_vs_calm_variance_levene"]
     st.info(f"Levene variance test p-value: {levene['p_value']:.3g}. {levene['interpretation']}.")
 
@@ -126,15 +126,15 @@ with portfolio_tab:
     display = portfolios.copy()
     for column in [name for name in display if name.endswith("_pct")]:
         display[column] = display[column].round(2)
-    st.dataframe(display, hide_index=True, use_container_width=True)
+    st.dataframe(display, hide_index=True, width="stretch")
     fig = px.scatter(
         portfolios, x="annual_volatility_pct", y="annual_return_pct", color="portfolio",
         hover_data=["sharpe_ratio", "maximum_drawdown_pct", "historical_var_95_pct"],
         labels={"annual_volatility_pct": "Annualized volatility (%)", "annual_return_pct": "Annualized historical return (%)"},
         title="Historical risk-return comparison",
     )
-    st.plotly_chart(fig, use_container_width=True)
-    st.plotly_chart(px.line(growth, x="date", y=["equal_weight", "minimum_volatility", "maximum_sharpe"], title="Growth of one historical unit"), use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
+    st.plotly_chart(px.line(growth, x="date", y=["equal_weight", "minimum_volatility", "maximum_sharpe"], title="Growth of one historical unit"), width="stretch")
     st.warning("Optimized weights are in-sample illustrations and can be unstable. They exclude costs, taxes, slippage, and dividends and are not portfolio recommendations.")
 
 with model_tab:
@@ -143,7 +143,7 @@ with model_tab:
     b.metric("PR AUC", f"{model_metrics['pr_auc']:.3f}")
     c.metric("Balanced accuracy", f"{model_metrics['balanced_accuracy']:.3f}")
     d.metric("Brier score", f"{model_metrics['brier_score']:.3f}")
-    st.plotly_chart(px.line(predictions, x="date", y="predicted_probability", title="Out-of-sample next-day stress probability"), use_container_width=True)
+    st.plotly_chart(px.line(predictions, x="date", y="predicted_probability", title="Out-of-sample next-day stress probability"), width="stretch")
     st.markdown(
         f"The model uses a chronological split: **{model_metrics['training_rows']:,} training rows** ending "
         f"{model_metrics['training_end_date']} and **{model_metrics['test_rows']:,} later test rows** beginning "

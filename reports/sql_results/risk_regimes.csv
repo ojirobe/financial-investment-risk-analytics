@@ -1,0 +1,4 @@
+regime,trading_days,average_return_pct,average_absolute_return_pct
+calm,640,0.1496,0.5141
+elevated,119,-0.2811,0.9273
+high_stress,15,-0.7521,2.7029

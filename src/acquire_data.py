@@ -12,6 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
 SERIES = {
     "SP500": "S&P 500 daily close (price index, dividends excluded)",
+    "NASDAQCOM": "Nasdaq Composite daily close",
+    "NASDAQXAU": "PHLX Gold/Silver Sector Index",
+    "BAMLCC0A0CMTRIV": "ICE BofA US Corporate Index Total Return Index Value",
     "VIXCLS": "CBOE Volatility Index daily close",
     "DGS10": "10-year Treasury constant-maturity yield",
 }

@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-07T17:55:45.502230+00:00",
+  "raw_rows": 2841,
+  "processed_rows": 774,
+  "first_date": "2023-12-06",
+  "last_date": "2026-11-06",
+  "duplicate_dates": 0,
+  "remaining_missing_values": 0,
+  "raw_missing_by_series": {
+    "sp500": 328,
+    "nasdaq": 112,
+    "gold": 113,
+    "bonds": 2055,
+    "vix": 81,
+    "treasury_10y": 129
+  }
+}

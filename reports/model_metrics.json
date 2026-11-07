@@ -1,0 +1,17 @@
+{
+  "objective": "Predict whether the next trading day's absolute S&P 500 return exceeds the training-set 90th percentile",
+  "chronological_split": true,
+  "training_rows": 619,
+  "test_rows": 154,
+  "training_end_date": "2026-04-06",
+  "test_start_date": "2026-04-07",
+  "stress_threshold_abs_return_pct": 1.420187872415298,
+  "test_stress_rate": 0.09740259740259741,
+  "roc_auc": 0.6800959232613909,
+  "pr_auc": 0.20345621824113247,
+  "decision_threshold_training_prevalence": 0.10016155088852989,
+  "balanced_accuracy": 0.5225419664268586,
+  "brier_score": 0.0876584046607307,
+  "baseline_brier_training_prevalence": 0.08792294324616248,
+  "not_for_trading": true
+}

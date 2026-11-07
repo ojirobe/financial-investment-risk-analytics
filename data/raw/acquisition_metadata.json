@@ -1,5 +1,5 @@
 {
-  "retrieved_at_utc": "2026-11-07T17:45:44.610392+00:00",
+  "retrieved_at_utc": "2026-11-07T17:55:45.020713+00:00",
   "transport": "FRED public graph CSV endpoint",
   "downloads": {
     "SP500": {
@@ -7,6 +7,24 @@
       "url": "https://fred.stlouisfed.org/series/SP500",
       "file": "data/raw/SP500.csv",
       "bytes": 48922
+    },
+    "NASDAQCOM": {
+      "description": "Nasdaq Composite daily close",
+      "url": "https://fred.stlouisfed.org/series/NASDAQCOM",
+      "file": "data/raw/NASDAQCOM.csv",
+      "bytes": 57409
+    },
+    "NASDAQXAU": {
+      "description": "PHLX Gold/Silver Sector Index",
+      "url": "https://fred.stlouisfed.org/series/NASDAQXAU",
+      "file": "data/raw/NASDAQXAU.csv",
+      "bytes": 49349
+    },
+    "BAMLCC0A0CMTRIV": {
+      "description": "ICE BofA US Corporate Index Total Return Index Value",
+      "url": "https://fred.stlouisfed.org/series/BAMLCC0A0CMTRIV",
+      "file": "data/raw/BAMLCC0A0CMTRIV.csv",
+      "bytes": 15063
     },
     "VIXCLS": {
       "description": "CBOE Volatility Index daily close",
